@@ -20,7 +20,7 @@ public class MyAList<E> implements Iterable<E>
 	private ArrayList<E> list;
 	
 	// Not sure if we need java documentation of just inline comments on each of the methods
-	public void MyAList() {
+	public MyAList() {
 		list = new ArrayList<E>();
 	}
 	
@@ -43,39 +43,34 @@ public class MyAList<E> implements Iterable<E>
         return list.get(index);
     }
 
-    
     public int size() {
         return list.size();
     } 
-    
-    
-    
-    
-    
-	public void addAll(MyAList<E> items) {
-		
+
+	public void remove(int index) {
+       list.remove(index);
+    }
+	
+	public void set(int index, E item) {
+		list.set(index, item);
 	}
-	
-	public E get(int index) {
 		
-	}
-	
-	public void set(int index, E item);
-	
-	public boolean isEmpty();
-	
-	public Object[] toArray();
-	
-	public void clear();
-	
-	
-	
-	@Override
-	public Iterator<E> iterator()
-	{
-		// TODO Auto-generated method stub
-	
-		return null;
+	public boolean isEmpty() {
+		return list.isEmpty();
 	}
 
+	public Object[] toArray() {
+		return list.toArray();
+	}
+
+	public void clear() {
+		list.clear();
+	}
+
+	@Override
+	public Iterator<E> iterator() {
+			return list.iterator();
+	}
 }
+
+
