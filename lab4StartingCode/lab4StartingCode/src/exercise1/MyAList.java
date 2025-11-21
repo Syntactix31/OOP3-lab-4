@@ -57,6 +57,7 @@ public class MyAList<E> implements Iterable<E>
     public int size() {
         return list.size();
     } 
+    
 
 	public void remove(int index) {
        list.remove(index);
@@ -80,7 +81,7 @@ public class MyAList<E> implements Iterable<E>
 
 	@Override
 	public Iterator<E> iterator() {
-			return list.iterator();
+		return list.iterator();
 	}
 }
 
