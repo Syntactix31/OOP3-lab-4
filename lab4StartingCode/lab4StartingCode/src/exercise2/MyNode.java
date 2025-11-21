@@ -1,7 +1,5 @@
 package exercise2;
 
-<<<<<<< HEAD
-
 /**
  * Created 11/20/2025
  * 
