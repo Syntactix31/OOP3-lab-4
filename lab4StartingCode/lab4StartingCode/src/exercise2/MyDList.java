@@ -73,22 +73,64 @@ public class MyDList<E>
 	}
 	
 	
-	
-	
+	// Removes and returns the first element in the list
 	public E removeFirst() {
+		if (head == null) {
+			// empty list
+			return null;
+		}
 		
+		E data = head.getElement();
+		
+		// single element
+		if (head == tail) {
+			head = null;
+			tail = null;
+		} else {
+			MyNode<E> newHead = head.getNext();
+			head.setNext(null);
+			if (newHead != null) {
+				newHead.setPrev(null);
+			}
+			head = newHead;
+		}
+		
+		size--;
+		return data;
 	}
 	
+	// E removeLast()
 	public E removeLast() {
+		if (tail == null) {
+			// empty list
+			return null;
+		}
 		
+		E data = tail.getElement();
+		
+		// single element
+		if (head == tail) {
+			head = null;
+			tail = null;
+		} else {
+			MyNode<E> newTail = tail.getPrev();
+			tail.setPrev(null);
+			if (newTail != null) {
+				newTail.setNext(null);
+			}
+			tail = newTail;
+		}
+		
+		size--;
+		return data;
 	}
 	
 	public int size() {
-		
+		return size;
 	}
 	
 	public boolean isEmpty() {
-		
+		return size == 0;
 	}
 	
 
